@@ -26,3 +26,8 @@ Views
 Question:
 1. What exact information of users should be displayed on the home page
 2. We will need a wireframe of the homepage.. Just an idea, we can come up with the rest of the information.
+
+Next Steps:
+1. Create a sketch of the views to use as a basline for wireframing
+1. Find a designer to help with better wireframes
+
