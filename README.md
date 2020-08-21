@@ -46,4 +46,5 @@ Question:
 Next Steps:
 1. Create a sketch of the views to use as a basline for wireframing
 1. Find a designer to help with better wireframes
+1. Gather API specs for all the data we want to display
 
