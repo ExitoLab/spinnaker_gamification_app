@@ -9,11 +9,12 @@ We find a lot of use in this app: https://github.com/cncf/devstats and https://s
 
 
 ## Team
-Ige Adetokunbo
-Nikema Prophet
-Rosalind Benoit 
-Kuti
-Vishal
+
+- Ige Adetokunbo
+- Nikema Prophet
+- Rosalind Benoit 
+- Kuti
+- Vishal
 
 ## 
 The following technologies will be used 
@@ -32,6 +33,8 @@ The various features of the application:
 3. If user supplies linkedin and github information. it will be displayed on the website and if nothing is supplied it will display basic information from github and a link to the registration page for user to register and add data to their contribution profile. 
 4. A cron job (Golang) will run periodically and get information from github and insert into database. This will be a microservice  
 5. The cron job will be able to trigger from the admin UI. Supply date and it will get information from linkedln
+
+## Feature & APIs
 
 Views:
 1. Home Page - The idea for this page is to provide a few generalized project stats, and two period-configurable "leaderboards" that show the top (20?) contributors in the period (week/month/year). One list should show all contributors, and the other should filter out "Community Contributors" (all contributors minus those from Netflix, Google, and maybe Armory?) Below these lists, we hope to also add areas to browse recent human (non-bot) Pull Requests and Issues, with links to the relevant GitHub pages and to contributor profiles internally. Should link to devstats. Could have a "featured content" area sourced from user-provided links, automated display highly preferable for an OSS-maintained project.
@@ -72,6 +75,12 @@ Additional APIs that might be helpful:
 Features with no found API match:
 - List of CDF projects contributed to. Some detail here: https://stackoverflow.com/questions/20714593/github-api-repositories-contributed-to
 - Length of time since becoming a contributor. This is being monitored in some way here - https://spinnaker.devstats.cd.foundation/d/52/new-contributors-table?orgId=1 so we should dissect how they are doing this using [GHArchive](https://www.gharchive.org/)
+
+Events to start with: 
+- [PullRequestEvent](https://developer.github.com/v3/activity/event_types/#pullrequestevent) action=opened
+- [IssueCommentEvent](https://developer.github.com/v3/activity/event_types/#issuesevent) action=opened
+- [PullRequestReviewCommentEvent](https://developer.github.com/v3/activity/event_types/#pullrequestreviewcommentevent) action=created 
+- [IssueCommentEvent](https://developer.github.com/v3/activity/event_types/#issuecommentevent) action=created 
 
 Question:
 1. What exact information of users should be displayed on the home page
@@ -118,4 +127,21 @@ Next Steps:
 1. Find a designer to help with better wireframes
 1. Gather API specs for all the data we want to display
 1. Create a user journey
+1. Ige & Rosalind do a short meeting to discuss backend next steps
+1. Test consuming API calls on the events in the events list, and compare results to what we see in DevStats, and determine whether the results will meet our needs
+1. Based on API output/testing, Ige will begin creating the database schema
+1. Vishal will be working on React JS, pairing with Nikema, so he can begin once the API spec is done
+1. Kuti & Nikema create HTML/CSS wireframe
+1. Rosalind will check for CDF brand guide and give Kuti guidance on branding
+1. Ige will re-add collaborators to calendar invite
+1. Kuti will create a basic brand guide if needed
+1. All will connect to collaborate async on Slack in [our Slack channel](https://spinnakerteam.slack.com/archives/C019EV8HA7Q)
+
+Notes:
+What APIs can we start consuming? Once you have the token set up it's pretty easy. Ige is going to check out DevStats and see what we can borrow. At this point, the plan is to use APIs where possible and githubarchive where not possible.
+
+2 options:
+
+
+Here is the usage information from Lukaz on how he pulls and processes the data for DevStats https://github.com/cncf/devstats/blob/master/USAGE.md
 
