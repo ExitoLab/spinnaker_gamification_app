@@ -29,9 +29,23 @@ Features to test:
 - Check role in the Spinnaker projects - scrape membership file at https://github.com/spinnaker/governance/blob/master/membership.yml
 
 _Testing notes_: we are testing these APIs using curl, with guidance from [this article](https://www.softwaretestinghelp.com/github-rest-api-tutorial/). One issue we have run into is differentiating between usage of "organization" "owner" and "username" as used in these APIs. This query worked to reveal pull requests to the repo in question (clouddriver), but it is still unclear to us how we can filter this for a specific actor/user:
+
 ```
 curl -X GET -u <username>:<token> https://api.github.com/repos/spinnaker/clouddriver/pulls?state="all" | grep state
 ```
+
+```
+curl -X GET -u <username>:<token> https://api.github.com/repos/ExitoLab/spinnaker_gamification_app/issues
+```
+
+```
+>curl -X GET -u <username>:<token> https://api.github.com/repos/ExitoLab/spinnaker_gamification_app/issues/1/comments
+```
+
+```
+curl -X GET -u <username>:<token> https://api.github.com/repos/ExitoLab/spinnaker_gamification_app/stats/contributors
+```
+
 
 Additional APIs that might be helpful:
 - Get total number of commits in a repository authored by an individual contributor - https://developer.github.com/v3/repos/statistics/#get-all-contributor-commit-activity
