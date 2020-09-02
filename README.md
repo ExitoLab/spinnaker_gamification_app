@@ -137,6 +137,7 @@ Next Steps:
 1. Ige will re-add collaborators to calendar invite
 1. Kuti will create a basic brand guide if needed
 1. All will connect to collaborate async on Slack in [our Slack channel](https://spinnakerteam.slack.com/archives/C019EV8HA7Q)
+1. Test API behavior in cases where users make commits that are components of Pull Requests submitted by other users. Can we reliably count commits and present an all-time total of merged and/or submitted commits?
 
 Notes:
 What APIs can we start consuming? Once you have the token set up it's pretty easy. Ige is going to check out DevStats and see what we can borrow. At this point, the plan is to use APIs where possible and githubarchive where not possible.
