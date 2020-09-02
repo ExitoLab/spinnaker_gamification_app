@@ -43,7 +43,8 @@ Views:
 1. Admin Page or View
 
 Features to test:
-- Count individual user's PRs - https://developer.github.com/v3/pulls/#list-pull-requests
+- Count individual user's submitted PRs - https://developer.github.com/v3/pulls/#list-pull-requests
+- Count individual user's merged PRs - https://developer.github.com/v3/pulls/#list-pull-requests
 - Count individual user's Issues - https://developer.github.com/v3/issues/#list-repository-issues
 - Count individual user's Issue & PR Comments - https://developer.github.com/v3/issues/comments/#list-issue-comments
 - Check role in the Spinnaker projects - scrape membership file at https://github.com/spinnaker/governance/blob/master/membership.yml
