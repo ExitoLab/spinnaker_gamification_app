@@ -1,4 +1,4 @@
-module scheduler_job
+module spinnaker_gamification_app
 
 go 1.15
 

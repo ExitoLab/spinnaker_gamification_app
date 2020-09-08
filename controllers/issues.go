@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/ExitoLab/spinnaker_gamification_app/scheduler_job/github"
+	"github.com/ExitoLab/spinnaker_gamification_app/github"
 )
 
 func GetIssue(w http.ResponseWriter, r *http.Request) {
