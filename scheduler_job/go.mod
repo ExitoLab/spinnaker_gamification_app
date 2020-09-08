@@ -1,4 +1,4 @@
-module scheduler
+module scheduler_job
 
 go 1.15
 

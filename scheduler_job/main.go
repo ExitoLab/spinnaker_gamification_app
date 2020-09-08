@@ -6,7 +6,7 @@ import (
 
 	_ "github.com/lib/pq"
 
-	"github.com/Exitolab/spinnaker_gamification_app/scheduler/controllers"
+	"github.com/ExitoLab/spinnaker_gamification_app/scheduler_job/controllers"
 	"github.com/gorilla/mux"
 )
 
