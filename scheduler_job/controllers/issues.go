@@ -7,7 +7,7 @@ import (
 	"github.com/Exitolab/spinnaker_gamification_app/scheduler/github"
 )
 
-func getIssue(w http.ResponseWriter, r *http.Request) {
+func GetIssue(w http.ResponseWriter, r *http.Request) {
 	// some logic here
 	issues := github.GetIssues("ExitoLab", "spinnaker-ms-teams-notification-plugin")
 

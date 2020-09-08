@@ -6,6 +6,7 @@ import (
 
 	_ "github.com/lib/pq"
 
+	"github.com/Exitolab/spinnaker_gamification_app/scheduler/controllers"
 	"github.com/gorilla/mux"
 )
 
@@ -18,7 +19,7 @@ import (
 func main() {
 	router := mux.NewRouter()
 
-	router.HandleFunc("/get_issues", getIssue).Methods("GET")
+	router.HandleFunc("/get_issues", controllers.GetIssue).Methods("GET")
 
 	// Swagger
 	router.PathPrefix("/swagger").Handler(httpSwagger.WrapHandler)
@@ -31,7 +32,7 @@ func main() {
 // 	if err != nil {
 // 		log.Fatalln(err)
 // 	}
-// 	token := "6c7b3bf6ac8ad717484091e327046380e27e5238"
+// 	token := ""
 // 	req.Header.Set("Authorization", "Bearer "+token)
 // 	client := &http.Client{}
 // 	res, err := client.Do(req)
