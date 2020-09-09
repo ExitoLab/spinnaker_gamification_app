@@ -1,4 +1,4 @@
-module spinnaker_gamification_app
+module github.com/ExitoLab/spinnaker_gamification_app/github
 
 go 1.15
 
