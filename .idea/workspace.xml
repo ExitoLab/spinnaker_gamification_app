@@ -31,23 +31,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="872af0bc-1086-4fa7-b57c-d7d51f56caee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/spinnaker_gamification_app.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/issues.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/github/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/issues.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/setup.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduler_job/controllers/issues.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduler_job/github/main.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduler_job/go.mod" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduler_job/go.sum" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduler_job/main.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduler_job/models/issues.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduler_job/models/setup.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/issues.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/issues.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/github/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/github/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
