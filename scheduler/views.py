@@ -17,7 +17,7 @@ from rest_framework import filters
 def external_api_view(request): #Get the request from the rest api
     try:
         url = "https://api.github.com/repos/ExitoLab/spinnaker-ms-teams-notification-plugin/issues"
-        r = requests.get(url, verify=False, auth=HTTPBasicAuth('username', 'token'))
+        r = requests.get(url, verify=False, auth=HTTPBasicAuth('ExitoLab', 'e5d1b2222f66b2d7dd4960ad432a9801c3915465'))
         result = r.json()
     except Exception as e:
         raise (e)
