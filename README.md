@@ -20,10 +20,9 @@ We find a lot of use in this app: https://github.com/cncf/devstats and https://s
 The following technologies will be used 
 
 1. Django rest framework 
-2. Golang 
-3. React Js 
-4. CI/ CD (Spinnaker, Jenkins, Github Actions)
-5. Postgres MySQL
+2. React Js 
+3. CI/ CD (Spinnaker, Jenkins, Github Actions)
+4. Postgres MySQL
 
 
 The various features of the application:

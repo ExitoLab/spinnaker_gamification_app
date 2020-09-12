@@ -1,0 +1,9 @@
+/venv
+/media
+.idea
+.vscode
+*.pyc
+*__pycache__*
+
+#remove github stuffs 
+#remove database configs
