@@ -39,11 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "rest_framework_swagger",
     'rest_framework',
-    'corsheaders',
-    
+    'corsheaders',    
     #apps
     'scheduler',
     'settings',
+    #social oauth
+    'oauth2_provider',
+    'social_django',
+    'rest_framework_social_oauth2',
 ]
 
 MIDDLEWARE = [
@@ -71,6 +74,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -94,11 +99,6 @@ def get_env_value(env_variable):
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    # }
-    
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'HOST':  get_env_value('DATABASE_HOST'),
@@ -107,6 +107,18 @@ DATABASES = {
         'PASSWORD':  get_env_value('DATABASE_PASSWORD'),
         'PORT': int(get_env_value('DATABASE_PORT')),
     }
+}
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'social_django.context_processors.backends',
+    'social_django.context_processors.login_redirect',
+)
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'oauth2_provider.contrib.rest_framework.OAuth2Authentication',  # django-oauth-toolkit >= 1.0.0
+        'rest_framework_social_oauth2.authentication.SocialAuthentication',
+    ),
 }
 
 # Password validation

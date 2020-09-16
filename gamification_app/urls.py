@@ -27,7 +27,8 @@ schema_view = get_swagger_view(title="Spinnaker Gamification App")
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", schema_view),
-    path('scheduler/', include('scheduler.urls')), # new
+    path('scheduler/', include('scheduler.urls')),
+    #(r'^auth/', include('rest_framework_social_oauth2.urls')),
 ]
 
 
