@@ -25,7 +25,7 @@ SECRET_KEY = '+_io%6b%@1h*xd+r8+wi0$mw!fhqx6ijx%u211))5x%=dpjo_#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -89,7 +89,7 @@ from django.core.exceptions import ImproperlyConfigured
 
 def get_env_value(env_variable):
     try:
-      	return os.environ[env_variable]
+      	return os.environ.get[env_variable]
     except KeyError:
         error_msg = 'Set the {} environment variable'.format(env_variable)
         raise ImproperlyConfigured(error_msg)
@@ -99,20 +99,15 @@ def get_env_value(env_variable):
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'HOST':  get_env_value('DATABASE_HOST'),
-        'NAME':  get_env_value('DATABASE_NAME'),
-        'USER':  get_env_value('DATABASE_USER'),
-        'PASSWORD':  get_env_value('DATABASE_PASSWORD'),
-        'PORT': int(get_env_value('DATABASE_PORT')),
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "HOST": os.environ.get("DATABASE_HOST", "localhost"), 
+        "NAME": os.environ.get("DATABASE_NAME", "db"),
+        "USER":  os.environ.get("DATABASE_USER", "user"),
+        "PASSWORD": os.environ.get("DATABASE_PASSWORD", "password"),
+        "PORT": int(os.environ.get("DATABASE_PORT", "5432")),
     }
 }
-
-TEMPLATE_CONTEXT_PROCESSORS = (
-    'social_django.context_processors.backends',
-    'social_django.context_processors.login_redirect',
-)
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -120,6 +115,13 @@ REST_FRAMEWORK = {
         'rest_framework_social_oauth2.authentication.SocialAuthentication',
     ),
 }
+
+DRFSO2_PROPRIETARY_BACKEND_NAME = "github"
+
+AUTHENTICATION_BACKENDS = (
+   'rest_framework_social_oauth2.backends.DjangoOAuth2',
+   'django.contrib.auth.backends.ModelBackend',
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators

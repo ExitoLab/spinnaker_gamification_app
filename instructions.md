@@ -16,14 +16,14 @@ The following technologies will be used
 
 Sample of .env file. Pls ensure you are not commiting your .env to gihub, although `.env` has been added to environment variables
 
-ON Mac or linux machine leave it has EXPORT but on windows machine replace EXPORT with SET
+ON Mac or linux machine leave it has export but on windows machine replace EXPORT with SET
 
 ```
-EXPORT DATABASE_HOST=
-EXPORT DATABASE_NAME=
-EXPORT DATABASE_USER=
-EXPORT DATABASE_PASSWORD=
-EXPORT DATABASE_PORT=
-EXPORT GITHUB_USER=
-EXPORT GITHUB_TOKEN=
+export DATABASE_HOST=
+export DATABASE_NAME=
+export DATABASE_USER=
+export DATABASE_PASSWORD=
+export DATABASE_PORT=
+export GITHUB_USER=
+export GITHUB_TOKEN=
 ```

@@ -28,9 +28,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", schema_view),
     path('scheduler/', include('scheduler.urls')),
-    #(r'^auth/', include('rest_framework_social_oauth2.urls')),
+    path('auth/', include('rest_framework_social_oauth2.urls')),
 ]
-
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
