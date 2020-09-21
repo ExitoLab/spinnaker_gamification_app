@@ -42,8 +42,8 @@ def issue_external_api_view(request): #Get the request from the rest api
         issue_list = []
         issue_user_list = []
         for data in result:
-            response_issue = {"title": data["title"], "created_at": data["created_at"], "updated_at":data["updated_at"], "number": data["number"]}
-            response_user = { "login":data["user"]["login"], "type": data["user"]["type"], "number": data["number"] }
+            response_issue = {"title": data["title"], "created_at": data["created_at"], "updated_at":data["updated_at"], "github_number": data["number"], "github_id": data["id"]}
+            response_user = { "login":data["user"]["login"], "type": data["user"]["type"], "github_number": data["number"]}
             issue_list.append(response_issue)
             issue_user_list.append(response_user)
     
@@ -73,3 +73,21 @@ def issue_external_api_view(request): #Get the request from the rest api
     api_reponse = insert_issues_record(issue_list,issue_user_list,recent_record_number)
     
     return Response(api_reponse,status=status.HTTP_200_OK)
+
+# Add view for PR API
+@api_view(['GET'])
+@renderer_classes((JSONRenderer,))
+def pr_external_api_view(request): #Get the request from the rest api
+    try:
+        url = "https://api.github.com/repos/{}/{}/pulls".format("ExitoLab","spinnaker-ms-teams-notification-plugin")
+        r = requests.get(url, verify=False, auth=HTTPBasicAuth(os.environ["GITHUB_USER"], os.environ["GITHUB_TOKEN"]))
+        result = r.json()
+        print(result)
+        if "message" in result and "documentation_url" in result:
+            if result['message'] == "Bad credentials":
+                return Response("Bad credentials supplied to the API",status=status.HTTP_404_NOT_FOUND)
+    except Exception as e:
+        raise (e)
+
+    return Response(result,status=status.HTTP_200_OK)
+
