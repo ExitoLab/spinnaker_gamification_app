@@ -30,3 +30,19 @@ class record_last_number(models.Model):
     
     def __str__(self):
         return self.last_issue_number
+
+# Add model for comments
+
+class comment(models.Model):
+    github_id = models.IntegerField()
+    github_number = models.TextField()
+    login = models.TextField()
+    url = models.TextField()
+    body = models.TextField()
+    created_at = models.DateTimeField()
+    updated_at = models.DateTimeField()
+    date_created_at = models.DateTimeField(auto_now_add=True)
+    date_updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.body
