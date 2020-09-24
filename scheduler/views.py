@@ -83,6 +83,16 @@ def pr_external_api_view(request): #Get the request from the rest api
         r = requests.get(url, verify=False, auth=HTTPBasicAuth(os.environ["GITHUB_USER"], os.environ["GITHUB_TOKEN"]))
         result = r.json()
         print(result)
+
+# Add view for Commit API
+
+@api_view(['GET'])
+@renderer_classes((JSONRenderer,))
+def commit_external_api_view(request): #Get the request from the rest api
+    try:
+        url = "https://api.github.com/repos/{}/{}/commits".format("ExitoLab","spinnaker-ms-teams-notification-plugin")
+        r = requests.get(url, verify=False, auth=HTTPBasicAuth(os.environ["GITHUB_USER"], os.environ["GITHUB_TOKEN"]))
+        result = r.json()
         if "message" in result and "documentation_url" in result:
             if result['message'] == "Bad credentials":
                 return Response("Bad credentials supplied to the API",status=status.HTTP_404_NOT_FOUND)
@@ -90,4 +100,20 @@ def pr_external_api_view(request): #Get the request from the rest api
         raise (e)
 
     return Response(result,status=status.HTTP_200_OK)
+  
+# Add view for Comment API
 
+@api_view(['GET'])
+@renderer_classes((JSONRenderer,))
+def comment_external_api_view(request): #Get the request from the rest api
+    try:
+        url = "https://api.github.com/repos/{}/{}/issues/comments".format("ExitoLab","spinnaker-ms-teams-notification-plugin")
+        r = requests.get(url, verify=False, auth=HTTPBasicAuth(os.environ["GITHUB_USER"], os.environ["GITHUB_TOKEN"]))
+        result = r.json()
+        if "message" in result and "documentation_url" in result:
+            if result['message'] == "Bad credentials":
+                return Response("Bad credentials supplied to the API",status=status.HTTP_404_NOT_FOUND)
+    except Exception as e:
+        raise (e)
+
+    return Response(result, status=status.HTTP_200_OK)
