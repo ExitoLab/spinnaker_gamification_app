@@ -21,4 +21,3 @@ class CommitSerializer(serializers.ModelSerializer):
     class Meta:
         fields = ('sha', 'github_id', 'login', 'url', 'message', 'created_at', 'date_created_at')
         model = models.commit
-        
