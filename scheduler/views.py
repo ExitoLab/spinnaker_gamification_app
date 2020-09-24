@@ -76,10 +76,6 @@ def issue_external_api_view(request): #Get the request from the rest api
 
 # Add view for Comments API
 
-return Response(api_reponse,status=status.HTTP_200_OK)
-
-# Add view for Commit API
-
 @api_view(['GET'])
 @renderer_classes((JSONRenderer,))
 def comment_external_api_view(request): #Get the request from the rest api
