@@ -42,8 +42,8 @@ def issue_external_api_view(request): #Get the request from the rest api
         issue_list = []
         issue_user_list = []
         for data in result:
-            response_issue = {"title": data["title"], "created_at": data["created_at"], "updated_at":data["updated_at"], "number": data["number"]}
-            response_user = { "login":data["user"]["login"], "type": data["user"]["type"], "number": data["number"] }
+            response_issue = {"title": data["title"], "created_at": data["created_at"], "updated_at":data["updated_at"], "github_number": data["number"], "github_id": data["id"]}
+            response_user = { "login":data["user"]["login"], "type": data["user"]["type"], "github_number": data["number"]}
             issue_list.append(response_issue)
             issue_user_list.append(response_user)
     
@@ -74,6 +74,15 @@ def issue_external_api_view(request): #Get the request from the rest api
     
     return Response(api_reponse,status=status.HTTP_200_OK)
 
+# Add view for PR API
+@api_view(['GET'])
+@renderer_classes((JSONRenderer,))
+def pr_external_api_view(request): #Get the request from the rest api
+    try:
+        url = "https://api.github.com/repos/{}/{}/pulls".format("ExitoLab","spinnaker-ms-teams-notification-plugin")
+        r = requests.get(url, verify=False, auth=HTTPBasicAuth(os.environ["GITHUB_USER"], os.environ["GITHUB_TOKEN"]))
+        result = r.json()
+        print(result)
 
 # Add view for Commit API
 
@@ -90,8 +99,7 @@ def commit_external_api_view(request): #Get the request from the rest api
     except Exception as e:
         raise (e)
 
-    return Response(result, status=status.HTTP_200_OK)
-
+    return Response(result,status=status.HTTP_200_OK)
   
 # Add view for Comment API
 
