@@ -18,6 +18,11 @@ class IssueLastNumberSerializer(serializers.ModelSerializer):
         model = models.record_last_number
 
 
+class CommitSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = ('sha', 'github_id', 'login', 'url', 'message', 'created_at', 'date_created_at')
+        model = models.commit
+
 # Add serializer for comments
 class CommentSerializer(serializers.ModelSerializer):
     class Meta:
