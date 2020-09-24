@@ -17,7 +17,14 @@ class IssueLastNumberSerializer(serializers.ModelSerializer):
         fields = ('id', 'last_issue_number','created_at','updated_at',)
         model = models.record_last_number
 
+
 class CommitSerializer(serializers.ModelSerializer):
     class Meta:
         fields = ('sha', 'github_id', 'login', 'url', 'message', 'created_at', 'date_created_at')
         model = models.commit
+
+# Add serializer for comments
+class CommentSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = ('body', 'github_id', 'github_number', 'created_at', 'updated_at', 'login', 'url', 'date_created_at', 'date_updated_at')
+        model = models.comment
