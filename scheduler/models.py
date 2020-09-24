@@ -30,3 +30,19 @@ class record_last_number(models.Model):
     
     def __str__(self):
         return self.last_issue_number
+
+# Add models for commits
+# @Ige I realized, we should probably add URL to each model so we can easily link to each contribution on GitHub. Will add to other models later
+
+class commit(models.Model):
+    sha = models.TextField()
+    github_id = models.IntegerField()
+    login = models.TextField()
+    url = models.TextField()
+    message = models.TextField()
+    created_at = models.DateTimeField()
+    date_created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.message
+
