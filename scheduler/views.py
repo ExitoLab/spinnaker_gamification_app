@@ -12,6 +12,8 @@ from .serializers import *
 from .models import *
 from rest_framework import filters
 
+from rest_framework.pagination import PageNumberPagination
+
 @api_view(['GET'])
 @renderer_classes((JSONRenderer,)) 
 def issue_external_api_view(request): #Get the request from the rest api
@@ -73,6 +75,21 @@ def issue_external_api_view(request): #Get the request from the rest api
     api_reponse = insert_issues_record(issue_list,issue_user_list,recent_record_number)
     
     return Response(api_reponse,status=status.HTTP_200_OK)
+
+
+@api_view(['GET'])
+#@permission_classes([AllowAny,])
+def ListIssueView(request):
+    """
+    Provides a get method handler.
+    """    
+    paginator = PageNumberPagination()
+    paginator.page_size = 10
+    
+    queryset = issue.objects.all()
+    result_page = paginator.paginate_queryset(queryset, request)
+    serializer_class = IssueSerializer(result_page, many=True)
+    return paginator.get_paginated_response(serializer_class.data)
 
 # Add view for PR API
 @api_view(['GET'])
