@@ -1,9 +1,9 @@
 /venv
 /media
-.idea
-.vscode
-*.pyc
-*__pycache__*
-*.sqlite3
-*.env.*
-.env
+*/.idea
+*/.vscode
+*/*.pyc
+*/*__pycache__*
+*/*.sqlite3
+*/*.env.*
+*/.env
