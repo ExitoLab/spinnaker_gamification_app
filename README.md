@@ -40,39 +40,6 @@ Question:
 1. Are we paying attention to the GitHub API limitations listed here https://github.com/cncf/devstats/blob/master/ARCHITECTURE.md#github-archives ?
 1. What is the best data to display to show users that the project is popular and "hot"?
 
-## User Journey
-
-I am a new user who has contributed to Spinnaker
-- I want to share my Spinnaker contributions that aren't on GitHub and show other users the complete picture of my engagement in OSS
-- I want to find out my rank on the leaderboard
-- I want to find out what is going on with the project this week/month/quarter
-- I want to find new issues/projects that I can contribute to, where others are engaged or help is needed
-- I want to find out how popular the project is
-- I want to find links to all my contributions in one place
-- I want to check and demonstrate how many Spinnaker repositories I have contributed to
-- I want to check out my profile
-- I want to drive traffic to my OSS content
-- I want to feel validated that my contributions can have value
-
-I am a new user who has not contributed to Spinnaker yet
-- I want to feel welcomed and that I am joining a friendly community that will appreciate me
-- I want to find out how popular the project is
-- I want to browse Spinnaker content and contributions
-- I want to decide whether or not to invest time in the Spinnaker project
-- I want to see where the project needs are, and seek a match for my skillset
-- I want to see an example of a successful pull request or other contribution
-- I want to feel validated that my contributions can have value
-
-I am a returning user
-- I want to drive traffic to my OSS content
-- I want to share my Spinnaker contributions that aren't on GitHub and show other users the complete picture of my engagement in OSS
-- I want to find out my rank on the leaderboard
-- I want to find out what is going on with the project this week/month/quarter
-- I want to find new issues/projects that I can contribute to, where others are engaged or help is needed
-- I want to find out how popular the project is
-- I want to find links to all my contributions in one place
-- I want to check and demonstrate how many Spinnaker repositories I have contributed to
-- I want to feel validated that my contributions can have value
 
 Next Steps:
 1. Create a sketch of the views to use as a basline for wireframing
