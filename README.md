@@ -146,3 +146,7 @@ What APIs can we start consuming? Once you have the token set up it's pretty eas
 
 Here is the usage information from Lukaz on how he pulls and processes the data for DevStats https://github.com/cncf/devstats/blob/master/USAGE.md
 
+## Backlog
+
+- User search feature
+
